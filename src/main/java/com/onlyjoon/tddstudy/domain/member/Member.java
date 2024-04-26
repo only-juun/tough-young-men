@@ -4,6 +4,7 @@ import com.onlyjoon.tddstudy.domain.BaseEntity;
 import com.onlyjoon.tddstudy.domain.memberRole.MemberRole;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -27,4 +28,10 @@ public class Member extends BaseEntity {
 
     @OneToMany(mappedBy = "member", cascade = CascadeType.ALL, orphanRemoval = true)
     List<MemberRole> memberRoles = new ArrayList<>();
+
+    @Builder
+    private Member(String id, String password) {
+        this.id = id;
+        this.password = password;
+    }
 }
