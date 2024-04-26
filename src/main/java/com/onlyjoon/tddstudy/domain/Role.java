@@ -28,4 +28,9 @@ public class Role extends BaseEntity {
     private Role(String roleName) {
         this.roleName = roleName;
     }
+
+    public void addMemberRole(MemberRole memberRole) {
+        this.roles.add(memberRole);
+        memberRole.updateRole(this);
+    }
 }

@@ -32,4 +32,10 @@ public class Member extends BaseEntity {
         this.id = id;
         this.password = password;
     }
+
+    public void addMemberRole(MemberRole memberRole) {
+        this.memberRoles.add(memberRole);
+        memberRole.updateMember(this);
+
+    }
 }

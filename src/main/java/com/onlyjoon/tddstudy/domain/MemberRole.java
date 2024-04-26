@@ -26,4 +26,16 @@ public class MemberRole extends BaseEntity {
         this.member = member;
         this.role = role;
     }
+
+    public static MemberRole create() {
+        return new MemberRole();
+    }
+
+    public void updateRole(Role role) {
+        this.role = role;
+    }
+
+    public void updateMember(Member member) {
+        this.member = member;
+    }
 }
