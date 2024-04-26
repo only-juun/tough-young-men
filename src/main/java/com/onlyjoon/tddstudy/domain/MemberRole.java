@@ -1,15 +1,13 @@
-package com.onlyjoon.tddstudy.domain.memberRole;
+package com.onlyjoon.tddstudy.domain;
 
-import com.onlyjoon.tddstudy.domain.BaseEntity;
-import com.onlyjoon.tddstudy.domain.member.Member;
-import com.onlyjoon.tddstudy.domain.role.Role;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-@Getter
 @Entity
+@Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class MemberRole extends BaseEntity {
 
@@ -22,4 +20,10 @@ public class MemberRole extends BaseEntity {
 
     @ManyToOne(fetch = FetchType.LAZY)
     private Role role;
+
+    @Builder
+    private MemberRole(Member member, Role role) {
+        this.member = member;
+        this.role = role;
+    }
 }

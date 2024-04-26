@@ -1,17 +1,16 @@
-package com.onlyjoon.tddstudy.domain.role;
+package com.onlyjoon.tddstudy.domain;
 
-import com.onlyjoon.tddstudy.domain.BaseEntity;
-import com.onlyjoon.tddstudy.domain.memberRole.MemberRole;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Getter
 @Entity
+@Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Role extends BaseEntity {
 
@@ -24,4 +23,9 @@ public class Role extends BaseEntity {
 
     @OneToMany(mappedBy = "role", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<MemberRole> roles = new ArrayList<>();
+
+    @Builder
+    private Role(String roleName) {
+        this.roleName = roleName;
+    }
 }
