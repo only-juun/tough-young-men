@@ -1,7 +1,5 @@
-package com.onlyjoon.tddstudy.domain.member;
+package com.onlyjoon.tddstudy.domain;
 
-import com.onlyjoon.tddstudy.domain.BaseEntity;
-import com.onlyjoon.tddstudy.domain.memberRole.MemberRole;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Builder;
@@ -11,8 +9,8 @@ import lombok.NoArgsConstructor;
 import java.util.ArrayList;
 import java.util.List;
 
-@Getter
 @Entity
+@Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Member extends BaseEntity {
 

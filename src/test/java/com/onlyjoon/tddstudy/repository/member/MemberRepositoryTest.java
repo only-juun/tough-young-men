@@ -1,6 +1,7 @@
 package com.onlyjoon.tddstudy.repository.member;
 
-import com.onlyjoon.tddstudy.domain.member.Member;
+import com.onlyjoon.tddstudy.domain.Member;
+import com.onlyjoon.tddstudy.repository.MemberRepository;
 import jakarta.transaction.Transactional;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -18,7 +19,7 @@ import static org.assertj.core.api.Assertions.tuple;
 class MemberRepositoryTest {
 
     @Autowired
-    MemberRepository memberRepository;
+    private MemberRepository memberRepository;
 
     @Test
     @DisplayName("존재하는 사용자를 조회할 수 있다.")
