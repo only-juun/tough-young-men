@@ -11,8 +11,8 @@ public class MemberLoginService {
 
     private final MemberRepository memberRepository;
 
-    public void login(MemberLoginRequest memberLoginRequest) {
-
+    public String login(MemberLoginRequest memberLoginRequest) {
+        return "login success";
     }
 
 }
